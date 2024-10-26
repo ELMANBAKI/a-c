@@ -1,0 +1,39 @@
+*{
+ font-family: "Lemonada", serif;
+  font-optical-sizing: auto;
+}
+.age-calculator {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .input-group {
+    margin: 20px 0;
+  }
+  
+  .input-field {
+    margin: 0 5px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .calculate-button, .reset-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .result {
+    margin-top: 20px;
+  }
+  
+  .stars {
+    margin-top: 10px;
+    font-size: 24px; /* يمكن تعديل حجم النجوم هنا */
+  }
+  
+  .star {
+    margin: 0 5px; /* المسافة بين النجوم */
+  }
+  
