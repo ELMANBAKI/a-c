@@ -1,25 +1,33 @@
-import React, { useState } from 'react';   
-import './AgeCalculator.css';
+import React, { useState } from "react";
+import "./AgeCalculator.css";
 
 const حساب_العمر = () => {
-  const [تاريخ_الميلاد, setتاريخ_الميلاد] = useState({ سنة: '', شهر: '', يوم: '' });
+  const [تاريخ_الميلاد, setتاريخ_الميلاد] = useState({
+    سنة: "",
+    شهر: "",
+    يوم: ""
+  });
   const [العمر, setالعمر] = useState(null);
-  const [خطأ, setخطأ] = useState('');
+  const [خطأ, setخطأ] = useState("");
   const [عدد_النجوم, setعدد_النجوم] = useState(0); // حالة جديدة لتخزين عدد النجوم
 
   const احسب_العمر = () => {
     const اليوم = new Date();
-    const الميلاد = new Date(تاريخ_الميلاد.سنة, تاريخ_الميلاد.شهر - 1, تاريخ_الميلاد.يوم);
+    const الميلاد = new Date(
+      تاريخ_الميلاد.سنة,
+      تاريخ_الميلاد.شهر - 1,
+      تاريخ_الميلاد.يوم
+    );
 
     if (الميلاد > اليوم) {
-      setخطأ('تاريخ الميلاد لا يمكن أن يكون في المستقبل');
+      setخطأ("تاريخ الميلاد لا يمكن أن يكون في المستقبل");
       setالعمر(null);
       setعدد_النجوم(0); // إعادة عدد النجوم إلى 0 في حالة الخطأ
       return;
     }
 
-    setخطأ('');
-    
+    setخطأ("");
+
     let السنوات = اليوم.getFullYear() - الميلاد.getFullYear();
     let الأشهر = اليوم.getMonth() - الميلاد.getMonth();
     let الأيام = اليوم.getDate() - الميلاد.getDate();
@@ -41,20 +49,20 @@ const حساب_العمر = () => {
   const handleChange = (e) => {
     setتاريخ_الميلاد({
       ...تاريخ_الميلاد,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
   const مسح_البيانات = () => {
-    setتاريخ_الميلاد({ سنة: '', شهر: '', يوم: '' });
+    setتاريخ_الميلاد({ سنة: "", شهر: "", يوم: "" });
     setالعمر(null);
-    setخطأ('');
+    setخطأ("");
     setعدد_النجوم(0); // إعادة عدد النجوم إلى 0 عند المسح
   };
 
   return (
     <div className="age-calculator">
-      <h1>حاسبة العمر</h1>
+      <h1>احسب العمر </h1>
       <div className="input-group">
         <input
           type="number"
@@ -83,19 +91,34 @@ const حساب_العمر = () => {
           className="input-field"
           required
         />
-        <button onClick={احسب_العمر} className="calculate-button">احسب العمر</button>
+      </div>
+      <div>
+        <button onClick={احسب_العمر} className="calculate-button">
+          اظغط هنا{" "}
+        </button>
       </div>
       {خطأ && <p className="error">{خطأ}</p>}
       {العمر && (
         <div className="result">
           <h2>عمرك</h2>
-          <p>   {العمر.السنوات} سنة، {العمر.الأشهر} شهر، و {العمر.الأيام} يوم  </p>
-          <button onClick={مسح_البيانات} className="reset-button">مسح البيانات</button>
+          <p>
+            {" "}
+            {العمر.السنوات} سنة، {العمر.الأشهر} شهر، و {العمر.الأيام} يوم{" "}
+          </p>
+         
+          <button onClick={مسح_البيانات} className="reset-button">
+            مسح البيانات
+          </button>
           <div className="stars">
             {Array.from({ length: عدد_النجوم }, (_, index) => (
-              <span key={index} className="star">⭐</span>
+              <span key={index} className="star">
+                ⭐
+              </span>
             ))}
           </div>
+          <dv className="contact" >
+            <p>للمزيد من البرامج تابعنا على صفحتنا </p>
+          </dv>
         </div>
       )}
     </div>

@@ -1,20 +1,25 @@
 *{
  font-family: "Lemonada", serif;
   font-optical-sizing: auto;
+  
+   
 }
 .age-calculator {
     text-align: center;
     padding: 20px;
+    
   }
   
   .input-group {
     margin: 20px 0;
+     
   }
   
   .input-field {
     margin: 0 5px;
     padding: 10px;
     font-size: 16px;
+    background-color: rgba(60, 182, 206, 0.42);
   }
   
   .calculate-button, .reset-button {
@@ -22,6 +27,10 @@
     font-size: 16px;
     margin-left: 5px;
     cursor: pointer;
+    background-color: rgba(5, 94, 237, 0.664);
+    color: aliceblue;
+    
+    
   }
   
   .result {
@@ -36,4 +45,3 @@
   .star {
     margin: 0 5px; /* المسافة بين النجوم */
   }
-  
